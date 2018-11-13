@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MediHome for Clinic</string>
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="title_dashboard">Reservasi</string>
+    <string name="title_home">Home</string>
+    <string name="title_antrian">Antrian</string>
+    <string name="title_profile">Profile</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
