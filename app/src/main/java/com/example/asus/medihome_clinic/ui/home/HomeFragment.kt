@@ -1,4 +1,4 @@
-package com.example.asus.medihome_clinic.ui
+package com.example.asus.medihome_clinic.ui.home
 
 
 import android.os.Bundle

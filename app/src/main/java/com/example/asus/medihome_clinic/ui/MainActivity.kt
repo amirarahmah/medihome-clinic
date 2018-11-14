@@ -9,6 +9,10 @@ import android.support.v4.app.Fragment
 import android.util.Log
 import android.widget.Toast
 import com.example.asus.medihome_clinic.R
+import com.example.asus.medihome_clinic.ui.antrian.AntrianFragment
+import com.example.asus.medihome_clinic.ui.home.HomeFragment
+import com.example.asus.medihome_clinic.ui.profile.ProfileFragment
+import com.example.asus.medihome_clinic.ui.reservasi.ReservasiFragment
 import com.example.asus.medihome_clinic.util.PreferenceHelper
 import com.example.asus.medihome_clinic.util.PreferenceHelper.get
 import com.example.asus.medihome_clinic.util.PreferenceHelper.set
@@ -22,8 +26,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        updateFragment(HomeFragment())
+        val showReservasi = intent?.extras?.getInt("reservasi", 0)
+
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
+        if(showReservasi == 1){
+            navigation.selectedItemId = R.id.navigation_reservasi
+        }else{
+            updateFragment(HomeFragment())
+        }
 
         sendTokenToServer()
 

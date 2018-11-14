@@ -73,14 +73,14 @@
 
             <Button
                 android:id="@+id/login_btn"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginBottom="24dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/colorAccent"
-                android:text="Login"
-                android:textColor="#fff" />
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/colorAccent"
+            android:text="Login"
+            android:textColor="#fff" />
         </LinearLayout>
 
 

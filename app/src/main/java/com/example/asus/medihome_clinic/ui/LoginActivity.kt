@@ -5,8 +5,12 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Toast
 import com.example.asus.medihome_clinic.R
+import com.example.asus.medihome_clinic.model.Userclinic
+import com.example.asus.medihome_clinic.util.PreferenceHelper
+import com.example.asus.medihome_clinic.util.PreferenceHelper.set
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.database.DataSnapshot
@@ -89,6 +93,13 @@ class LoginActivity : AppCompatActivity() {
             override fun onDataChange(p0: DataSnapshot) {
                 progressDialog.dismiss()
                 if(p0.exists()){
+                    val prefs = PreferenceHelper.defaultPrefs(this@LoginActivity)
+
+                    val idKlinik = p0.children.iterator().next().value
+
+                    prefs["idKlinik"] = idKlinik
+                    Log.d("LoginActivity", "ID klinik : $idKlinik")
+
                     navigateToMainActivity()
                 }else{
                     mAuth.signOut()

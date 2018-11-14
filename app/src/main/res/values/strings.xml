@@ -9,4 +9,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="data_pasien">Data Pasien</string>
+    <string name="data_pemesanan">Data Pemesan</string>
+    <string name="pilih_alasan_menolak">Pilih alasan Anda menolak</string>
+    <string name="alasan1">Sedang tidak praktik pada hari tersebut</string>
+    <string name="alasan2">Reservasi di jam tersebut sudah penuh</string>
+    <string name="alasan3">Reservasi di hari tersebut sudah penuh</string>
+    <string name="alasan4">Layanan sedang tidak tersedia</string>
 </resources>

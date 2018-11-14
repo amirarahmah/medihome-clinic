@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/pilih_alasan_menolak"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/rg_alasan_menolak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:paddingEnd="8dp">
+
+        <RadioButton
+            android:id="@+id/rb_alasan1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alasan1" />
+
+        <RadioButton
+            android:id="@+id/rb_alasan2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alasan2" />
+
+        <RadioButton
+            android:id="@+id/rb_alasan3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alasan3" />
+
+        <RadioButton
+            android:id="@+id/rb_alasan4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alasan4" />
+
+        <RadioButton
+            android:id="@+id/rb_alasan_lainnya"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lainnya" />
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/edittext_background2"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:paddingBottom="2dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="12dp">
+
+        <Button
+            android:id="@+id/batal_btn"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@color/md_grey_500"
+            android:text="batal"
+            android:textAllCaps="false"
+            android:textColor="#fff" />
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="35dp" />
+
+        <Button
+            android:id="@+id/kirim_btn"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:text="Kirim"
+            android:textAllCaps="false"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
+</LinearLayout>
