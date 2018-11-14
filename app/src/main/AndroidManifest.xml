@@ -26,14 +26,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.reservasi.ReservasiDetailActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.reservasi.ReservasiDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.antrian.DetailAntrianActivity"></activity>
     </application>
 
 </manifest>

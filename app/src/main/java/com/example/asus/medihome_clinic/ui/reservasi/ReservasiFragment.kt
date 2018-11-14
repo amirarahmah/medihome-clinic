@@ -39,13 +39,14 @@ class ReservasiFragment : Fragment(), AlasanMenolakDialog.AlasanMenolakDialogEve
     lateinit var pesananList: ArrayList<Reservation>
 
     override fun onAlasanSelected(alasan: String, idReservasi: String) {
+        Toast.makeText(context, "Reservasi ditolak", Toast.LENGTH_SHORT).show()
         alasanMenolak = alasan
         val reservasinRef = FirebaseDatabase.getInstance().reference.child("reservasi")
         reservasinRef.child(idReservasi).child("confirmed").setValue("false")
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
+                        reservasinRef.child(idReservasi).child("alasan").setValue(alasan)
                         sendNotifToUser("tolak")
-                        Toast.makeText(context, "Reservasi ditolak", Toast.LENGTH_SHORT).show()
                     }
                 }
     }
@@ -82,7 +83,7 @@ class ReservasiFragment : Fragment(), AlasanMenolakDialog.AlasanMenolakDialogEve
                         pesananList.clear()
                         for (data in p0.children) {
                             val pesanan = data.getValue(Reservation::class.java)
-                            if (pesanan?.confirmed != "false") {
+                            if (pesanan?.confirmed == "") {
                                 pesananList.add(pesanan!!)
                             }
                         }
@@ -125,6 +126,7 @@ class ReservasiFragment : Fragment(), AlasanMenolakDialog.AlasanMenolakDialogEve
     }
 
     private fun onTerimaButtonClicked(reservasi: Reservation, i: Int) {
+        Toast.makeText(context, "Reservasi diterima", Toast.LENGTH_SHORT).show()
         namaKlinik = reservasi.namaKlinik
         userId = reservasi.idUser
         idReservasi = reservasi.idReservation
@@ -138,7 +140,6 @@ class ReservasiFragment : Fragment(), AlasanMenolakDialog.AlasanMenolakDialogEve
         userRef.child("confirmed").setValue("true").addOnCompleteListener {
             if (it.isSuccessful) {
                 sendNotifToUser("terima")
-                mAdapter.notifyItemChanged(i)
             }
         }
     }
@@ -166,8 +167,8 @@ class ReservasiFragment : Fragment(), AlasanMenolakDialog.AlasanMenolakDialogEve
                             "Lakukan pembayaran untuk melanjukan",
                             namaKlinik)
                 } else {
-                    notifData = Data(idReservasi,"Reservasi yang Anda ajukan diterima. " +
-                            "Lakukan pembayaran untuk melanjukan",
+                    notifData = Data(idReservasi,"Reservasi yang Anda ajukan ditolak. " +
+                            "Lihat detail penolakan pada aplikasi",
                             namaKlinik)
                 }
 
